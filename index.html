@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Kiếm tiền online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+}
+header{
+  background:#020617;
+  padding:15px;
+  text-align:center;
+}
+.container{
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+}
+.task{
+  background:#020617;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+button{
+  background:#38bdf8;
+  border:none;
+  padding:8px 15px;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>💰 Kiếm tiền online</h2>
+  <p>Làm nhiệm vụ – vượt link</p>
+</header>
+
+<div class="container">
+
+  <div class="task">
+    <div>
+      <b>Vượt link Shopee</b><br>
+      Thưởng: 10 điểm
+    </div>
+    <button onclick="goLink('https://shopee.vn')">Làm</button>
+  </div>
+
+</div>
+
+<script>
+function goLink(url){
+  window.location.href = "wait.html?to=" + encodeURIComponent(url);
+}
+</script>
+
+</body>
+</html>
