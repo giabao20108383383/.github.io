@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Vui lòng chờ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  background:#020617;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+  text-align:center;
+}
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:#38bdf8;
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div>
+  <h2>⏳ Chờ <span id="time">5</span> giây</h2>
+  <p>Sau đó bấm tiếp tục</p>
+  <button id="btn">Tiếp tục</button>
+</div>
+
+<script>
+let t = 5;
+const params = new URLSearchParams(window.location.search);
+const target = params.get("to");
+
+const timer = setInterval(()=>{
+  t--;
+  document.getElementById("time").innerText = t;
+  if(t <= 0){
+    clearInterval(timer);
+    document.getElementById("btn").style.display = "inline-block";
+  }
+},1000);
+
+document.getElementById("btn").onclick = ()=>{
+  window.location.href = target;
+};
+</script>
+
+</body>
+</html>
